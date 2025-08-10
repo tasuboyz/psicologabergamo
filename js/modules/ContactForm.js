@@ -234,6 +234,9 @@ export class ContactForm {
     }
 
     setupFormAnimation() {
+        // Animazione form disabilitata per migliorare UX
+        // Gli input sono ora sempre visibili
+        /*
         // Animate form fields on first interaction
         let hasInteracted = false;
         
@@ -243,15 +246,19 @@ export class ContactForm {
                 hasInteracted = true;
             }
         }, { once: true });
+        */
     }
 
     animateFormFields() {
+        // Animazione form disabilitata per migliorare UX
+        /*
         const formGroups = this.form.querySelectorAll('.form-group');
         formGroups.forEach((group, index) => {
             setTimeout(() => {
                 group.classList.add('animate');
             }, index * 100);
         });
+        */
     }
 
     async handleSubmit() {

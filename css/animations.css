@@ -545,17 +545,7 @@
     animation: rotate 2s linear infinite;
 }
 
-/* Animazioni di entrata per gli elementi del form */
-.form-group {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease-out;
-}
-
-.form-group.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Animazioni di entrata per gli elementi del form - DISABILITATA per migliorare UX */
 
 /* Animazioni per la navigazione */
 .nav-link {
