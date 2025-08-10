@@ -2,7 +2,6 @@
 import { AnimationManager } from './modules/AnimationManager.js';
 import { NavigationManager } from './modules/NavigationManager.js';
 import { ContactForm } from './modules/ContactForm.js';
-import { MapIntegration } from './modules/MapIntegration.js';
 import { ComponentManager } from './modules/ComponentManager.js';
 import { siteContent } from '../data/content.js';
 
@@ -117,9 +116,6 @@ class PsicologaBergamoApp {
             
             // 4. Contact Form (per il form di contatto)
             this.modules.contactForm = new ContactForm();
-            
-            // 5. Map Integration (può essere caricata in modo asincrono)
-            this.initializeMapWithFallback();
             
             console.log('✅ Tutti i moduli inizializzati');
             
