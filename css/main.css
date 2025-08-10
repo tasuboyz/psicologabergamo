@@ -926,61 +926,6 @@ img {
     height: 100%;
 }
 
-/* Map Fallback Styles */
-.map-fallback {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: var(--radius-xl);
-}
-
-.fallback-content {
-    text-align: center;
-    padding: var(--space-xl);
-}
-
-.fallback-content i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: var(--space-lg);
-    animation: pulse 2s infinite;
-}
-
-.fallback-content h4 {
-    color: var(--primary-color);
-    margin-bottom: var(--space-sm);
-}
-
-.fallback-content p {
-    color: var(--text-secondary);
-    margin-bottom: var(--space-lg);
-}
-
-.fallback-actions {
-    display: flex;
-    gap: var(--space-md);
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-sm {
-    padding: var(--space-sm) var(--space-md);
-    font-size: var(--fs-sm);
-}
-
-.btn-secondary {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 2px solid var(--primary-color);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
 /* Component Error Styles */
 .component-error {
     display: flex;

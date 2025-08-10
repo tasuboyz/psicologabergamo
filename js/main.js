@@ -143,8 +143,7 @@ class PsicologaBergamoApp {
             console.log('✅ Google Maps inizializzato');
             
         } catch (error) {
-            console.warn('⚠️ Google Maps non disponibile, usando fallback:', error);
-            this.showMapFallback();
+            console.warn('⚠️ Google Maps non disponibile:', error);
         }
     }
 
@@ -168,33 +167,6 @@ class PsicologaBergamoApp {
                 resolve();
             }, { once: true });
         });
-    }
-
-    showMapFallback() {
-        const mapContainer = document.getElementById('google-map');
-        if (mapContainer) {
-            mapContainer.innerHTML = `
-                <div class="map-fallback">
-                    <div class="fallback-content">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <h4>Studio di Psicologia</h4>
-                        <p><strong>${siteContent.contact.address}</strong></p>
-                        <div class="fallback-actions">
-                            <a href="https://maps.google.com/search/${encodeURIComponent(siteContent.contact.address)}" 
-                               target="_blank" class="btn btn-primary btn-sm">
-                                <i class="fas fa-external-link-alt"></i>
-                                Apri in Google Maps
-                            </a>
-                            <a href="tel:${siteContent.contact.phone.replace(/\s/g, '')}" 
-                               class="btn btn-secondary btn-sm">
-                                <i class="fas fa-phone"></i>
-                                ${siteContent.contact.phone}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
     }
 
     getCustomInfoWindowContent() {

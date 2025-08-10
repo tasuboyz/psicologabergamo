@@ -4,7 +4,7 @@ export class MapIntegration {
         this.config = {
             containerId: 'google-map',
             address: 'Piazzale Lodovico Goisis 1, 24124 Bergamo BG',
-            center: null, // Sarà impostato dopo il geocoding
+            center: { lat: 45.6982642, lng: 9.6772698 }, // Coordinate dirette di Bergamo
             zoom: 16,
             styles: this.getMapStyles(),
             markerTitle: 'Dott.ssa Giulia Nicolino - Psicologa Psicoterapeuta',
@@ -15,7 +15,6 @@ export class MapIntegration {
         this.map = null;
         this.marker = null;
         this.infoWindow = null;
-        this.geocoder = null;
         this.isLoaded = false;
         
         this.init();
@@ -24,11 +23,9 @@ export class MapIntegration {
     async init() {
         try {
             await this.waitForGoogleMaps();
-            await this.geocodeAddress();
             this.initializeMap();
         } catch (error) {
             console.error('Errore nel caricamento di Google Maps:', error);
-            this.showFallback();
         }
     }
 
@@ -55,31 +52,6 @@ export class MapIntegration {
             }, 10000);
 
             checkGoogleMaps();
-        });
-    }
-
-    async geocodeAddress() {
-        return new Promise((resolve, reject) => {
-            this.geocoder = new google.maps.Geocoder();
-            
-            this.geocoder.geocode({ 
-                address: this.config.address,
-                region: 'IT' // Limita la ricerca all'Italia
-            }, (results, status) => {
-                if (status === 'OK' && results[0]) {
-                    this.config.center = {
-                        lat: results[0].geometry.location.lat(),
-                        lng: results[0].geometry.location.lng()
-                    };
-                    console.log(`📍 Indirizzo geocodificato: ${this.config.address}`, this.config.center);
-                    resolve(this.config.center);
-                } else {
-                    console.warn('⚠️ Geocoding fallito, uso coordinate di fallback per Bergamo');
-                    // Fallback coordinates per Bergamo centro
-                    this.config.center = { lat: 45.6982642, lng: 9.6772698 };
-                    resolve(this.config.center);
-                }
-            });
         });
     }
 
@@ -124,7 +96,6 @@ export class MapIntegration {
 
         } catch (error) {
             console.error('Errore nell\'inizializzazione della mappa:', error);
-            this.showFallback();
         }
     }
 
@@ -308,64 +279,6 @@ export class MapIntegration {
         `;
     }
 
-    showFallback() {
-        const container = document.getElementById(this.config.containerId);
-        if (!container) return;
-
-        container.innerHTML = `
-            <div style="
-                display: flex; 
-                flex-direction: column; 
-                align-items: center; 
-                justify-content: center; 
-                height: 100%; 
-                padding: 2rem; 
-                background: #f8f9fa; 
-                border-radius: 12px;
-                text-align: center;
-            ">
-                <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #4A90A4; margin-bottom: 1rem;"></i>
-                <h3 style="color: #2C5F7A; margin-bottom: 0.5rem;">Mappa non disponibile</h3>
-                <p style="color: #5D6D7E; margin-bottom: 1.5rem;">
-                    Si è verificato un errore nel caricamento della mappa.
-                </p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                    <a href="https://maps.google.com/search/${encodeURIComponent(this.config.address)}" 
-                       target="_blank"
-                       style="
-                           display: inline-flex; 
-                           align-items: center; 
-                           gap: 0.5rem; 
-                           background: #2C5F7A; 
-                           color: white; 
-                           padding: 0.75rem 1rem; 
-                           border-radius: 8px; 
-                           text-decoration: none;
-                           font-weight: 500;
-                       ">
-                        <i class="fas fa-external-link-alt"></i>
-                        Apri Google Maps
-                    </a>
-                    <a href="tel:+393391800568"
-                       style="
-                           display: inline-flex; 
-                           align-items: center; 
-                           gap: 0.5rem; 
-                           background: #4A90A4; 
-                           color: white; 
-                           padding: 0.75rem 1rem; 
-                           border-radius: 8px; 
-                           text-decoration: none;
-                           font-weight: 500;
-                       ">
-                        <i class="fas fa-phone"></i>
-                        Chiama
-                    </a>
-                </div>
-            </div>
-        `;
-    }
-
     // Metodi pubblici
     centerOnLocation() {
         if (this.map) {
@@ -386,30 +299,17 @@ export class MapIntegration {
         }
     }
 
-    updateMarkerPosition(latOrAddress, lng = null) {
-        if (typeof latOrAddress === 'string') {
-            // Se è un indirizzo, geocodifichiamo
-            this.config.address = latOrAddress;
-            this.geocodeAddress().then(() => {
-                if (this.marker) {
-                    this.marker.setPosition(this.config.center);
-                }
-                if (this.map) {
-                    this.map.setCenter(this.config.center);
-                }
-            });
-        } else {
-            // Se sono coordinate numeriche
-            const newPosition = { lat: latOrAddress, lng };
-            this.config.center = newPosition;
-            
-            if (this.marker) {
-                this.marker.setPosition(newPosition);
-            }
-            
-            if (this.map) {
-                this.map.setCenter(newPosition);
-            }
+    updateMarkerPosition(lat, lng) {
+        // Solo coordinate numeriche
+        const newPosition = { lat, lng };
+        this.config.center = newPosition;
+        
+        if (this.marker) {
+            this.marker.setPosition(newPosition);
+        }
+        
+        if (this.map) {
+            this.map.setCenter(newPosition);
         }
     }
 
