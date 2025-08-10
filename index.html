@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dott.ssa Giulia Nicolino - Psicologa Psicoterapeuta Bergamo</title>
+    <meta name="description" content="Psicologa Clinica specializzata in Psicoterapia Sistemico-Relazionale a Bergamo. Consulenze, sostegno psicologico e psicoterapia per individui, coppie e famiglie.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Google Maps API - Sostituisci YOUR_GOOGLE_MAPS_API_KEY con la tua API key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="images/logo.avif" alt="Logo Giulia Nicolino">
+            </div>
+            <div class="loading-text">
+                <h2>Benvenuto</h2>
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.avif" alt="Logo" class="logo-img">
+                <span class="logo-text">Giulia Nicolino</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">Chi Sono</a>
+                <a href="#services" class="nav-link">Servizi</a>
+                <a href="#contact" class="nav-link">Contatti</a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="images/copertina iniziale.avif" alt="Copertina" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
+                    <h1 class="hero-title">
+                        <span class="title-line" data-aos="fade-up" data-aos-delay="400">Esistono per te</span>
+                        <span class="title-line highlight" data-aos="fade-up" data-aos-delay="600">diversi mondi possibili</span>
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="800">
+                        alcune volte però serve una mano per poterli esplorare
+                    </p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="1000">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Iniziamo questo viaggio insieme?</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1200">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scorri per esplorare</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-container">
+                        <img src="images/foto psicologa.avif" alt="Dott.ssa Giulia Nicolino" class="about-img">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                
+                <div class="about-text" data-aos="fade-left">
+                    <h2 class="section-title">
+                        <span class="title-accent">PSICO</span>...CHI?
+                    </h2>
+                    
+                    <div class="about-intro">
+                        <h3 class="about-name">Giulia Nicolino</h3>
+                        <p class="about-profession">Psicologa Clinica specializzata in Psicoterapia Sistemico-Relazionale</p>
+                        <p class="about-registration">Psicologa - Psicoterapeuta iscritta alla sezione A dell'Albo Professionale - Ordine degli Psicologi della Lombardia, n°22599</p>
+                    </div>
+                    
+                    <div class="about-bio">
+                        <p>Mi occupo di <strong>Sostegno Psicologico</strong>, <strong>Psicoterapia</strong> e di <strong>Promozione della Salute</strong>.</p>
+                        
+                        <p>Nata e cresciuta in Calabria, in un paesino di campagna sulla costa tirrenica, spinta dalla voglia di intraprendere lo studio della psicologia, mi sono spostata negli anni, abitando diversi luoghi, contesti, culture.</p>
+                        
+                        <p>Ognuno di questi posti mi ha permesso di collezionare esperienze e relazioni preziose, plasmando il mio stile, determinando chi oggi sono sia a livello privato che professionale.</p>
+                    </div>
+                    
+                    <div class="education-path">
+                        <h4>Il mio percorso formativo</h4>
+                        <div class="education-timeline">
+                            <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="education-icon">🎓</div>
+                                <div class="education-content">
+                                    <h5>Laurea Triennale - Perugia</h5>
+                                    <p>Approfondendo i temi dell'autoregolazione e del goal setting</p>
+                                </div>
+                            </div>
+                            
+                            <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="education-icon">🌍</div>
+                                <div class="education-content">
+                                    <h5>Esperienza Internazionale - Berlino</h5>
+                                    <p>Esperienze cliniche e educative, conoscenza del modello sistemico-relazionale</p>
+                                </div>
+                            </div>
+                            
+                            <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="education-icon">🏛️</div>
+                                <div class="education-content">
+                                    <h5>Laurea Magistrale - Università di Bergamo</h5>
+                                    <p>Psicologia Clinica, tirocinio presso Centro Shinui</p>
+                                </div>
+                            </div>
+                            
+                            <div class="education-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="education-icon">🎯</div>
+                                <div class="education-content">
+                                    <h5>Specializzazione Quadriennale</h5>
+                                    <p>Scuola di Psicoterapia Sistemico-Dialogica di Bergamo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">I miei <span class="title-accent">Servizi</span></h2>
+                <p class="section-subtitle">Percorsi personalizzati per il tuo benessere</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Cards will be generated by JavaScript -->
+            </div>
+            
+            <div class="modalities-section" data-aos="fade-up">
+                <h3 class="modalities-title">Modalità di incontro</h3>
+                <div class="modalities-grid">
+                    <!-- Modalities will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborations Section -->
+    <section class="collaborations">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Collaborazioni</h2>
+                <p class="section-subtitle">Progetti e partnership professionali</p>
+            </div>
+            
+            <div class="collaborations-grid">
+                <!-- Collaborations will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Contattami</h2>
+                <p class="section-subtitle">Iniziamo insieme questo percorso</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <h3>Informazioni di contatto</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Telefono</h4>
+                                <a href="tel:+393391800568">339 180 0568</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:info@giulianicolino.com">info@giulianicolino.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Studio</h4>
+                                <p>Piazzale Lodovico Goisis 1<br>24124 Bergamo BG</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h4>Seguimi sui social</h4>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/giulia-nicolino-a97a02a0/" target="_blank" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.instagram.com/giulia.nicolino_psicologa/" target="_blank" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://wa.me/393391800568" target="_blank" class="social-link whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section" data-aos="fade-left">
+                    <div class="contact-form-container">
+                        <h3>Scrivimi un messaggio</h3>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nome *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefono</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Oggetto</label>
+                                <select id="subject" name="subject">
+                                    <option value="">Seleziona...</option>
+                                    <option value="consulenza">Richiesta consulenza</option>
+                                    <option value="psicoterapia">Psicoterapia</option>
+                                    <option value="coppia">Terapia di coppia</option>
+                                    <option value="adolescenti">Colloquio motivazionale adolescenti</option>
+                                    <option value="laboratorio">Laboratorio dialogico</option>
+                                    <option value="azienda">Promozione salute aziendale</option>
+                                    <option value="altro">Altro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Messaggio *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Descrivi brevemente il motivo della tua richiesta..."></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <span class="checkmark"></span>
+                                    Accetto l'informativa sulla privacy *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>Invia messaggio</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Google Maps -->
+            <div class="map-section" data-aos="fade-up">
+                <h3>Come raggiungermi</h3>
+                <div class="map-container">
+                    <div id="google-map" class="google-map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="images/logo.avif" alt="Logo">
+                        <div class="footer-text">
+                            <h3>Dott.ssa Giulia Nicolino</h3>
+                            <p>Psicologa - Psicoterapeuta Sistemico Relazionale</p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-details">
+                        <p>P.IVA 04473420166</p>
+                        <p>©2024 Dott.ssa Giulia Nicolino. Tutti i diritti riservati.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-contact">
+                        <h4>Contatti</h4>
+                        <p><i class="fas fa-phone"></i> 339 180 0568</p>
+                        <p><i class="fas fa-envelope"></i> info@giulianicolino.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Bergamo, BG</p>
+                    </div>
+                    
+                    <div class="footer-social">
+                        <h4>Seguimi</h4>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/giulia-nicolino-a97a02a0/" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.instagram.com/giulia.nicolino_psicologa/" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/393391800568" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
